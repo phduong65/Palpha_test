@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\API\BookingController;
-use App\Http\Controllers\API\RoomController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +16,3 @@ use App\Http\Controllers\API\RoomController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/rooms', [RoomController::class, 'index']);
-Route::get('/rooms/{id}/bookings', [RoomController::class, 'bookings']);
-Route::post('/bookings', [BookingController::class, 'store']);
-Route::delete('/bookings/{id}', [BookingController::class, 'destroy']);
