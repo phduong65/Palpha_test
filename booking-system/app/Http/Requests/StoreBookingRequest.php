@@ -23,7 +23,7 @@ class StoreBookingRequest extends FormRequest
             }
             $hasOverlap = Booking::query()->where('room_id', $this->room_id)->where('start_time', '<', $this->end_time)->where('end_time', '>', $this->start_time)->exists();
             if ($hasOverlap) {
-                $validator->errors()->add('room_id', 'This room is already booked in the selected time range.');
+                $validator->errors()->add('room_id', 'Phòng này đã được đặt trong thời gian chọn. Vui lòng chọn thời gian khác hoặc phòng khác.');
             }
         });
     }

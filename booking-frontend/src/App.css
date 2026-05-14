@@ -3,6 +3,17 @@
   background: linear-gradient(160deg, #f5f8ef 0%, #f0f4ff 50%, #ecf6f0 100%);
 }
 
+.auth-gate-page {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.auth-status {
+  color: #2f4437;
+  font-weight: 800;
+}
+
 .top-navigation {
   min-height: 72px;
   padding: 0.85rem 2rem;
@@ -265,6 +276,14 @@
   place-items: center;
   padding: 1rem;
   background: rgba(22, 34, 27, 0.42);
+}
+
+.auth-gate-page .auth-modal-backdrop {
+  position: static;
+  inset: auto;
+  width: min(460px, 100%);
+  padding: 0;
+  background: transparent;
 }
 
 .auth-modal {
