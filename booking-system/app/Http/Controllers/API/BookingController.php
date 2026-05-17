@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Booking;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Resources\BookingResource;
+use App\Models\Booking;
 use Symfony\Component\HttpFoundation\Response;
 
 class BookingController extends Controller
@@ -19,7 +19,7 @@ class BookingController extends Controller
             ->setStatusCode(Response::HTTP_CREATED);
     }
 
-    public function destroy($id)
+    public function destroy(int $id)
     {
         $booking = Booking::query()->findOrFail($id);
         $booking->delete();

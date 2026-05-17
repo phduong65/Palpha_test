@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Room;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\RoomResource;
 use App\Http\Resources\BookingResource;
+use App\Http\Resources\RoomResource;
+use App\Models\Room;
 
 class RoomController extends Controller
 {
@@ -16,7 +16,7 @@ class RoomController extends Controller
         );
     }
 
-    public function bookings($id)
+    public function bookings(int $id)
     {
         $room = Room::query()->findOrFail($id);
 
