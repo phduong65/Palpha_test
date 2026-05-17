@@ -4,6 +4,7 @@ import BookingList from "./components/BookingList";
 import RoomsSidebar from "./components/RoomsSidebar";
 import TopNavigation from "./components/TopNavigation";
 import { useBooking } from "./context/BookingContext";
+import { useAuth } from "./context/AuthContext";
 import { useRoomContext } from "./context/RoomContext";
 
 function BookingApp() {
@@ -20,6 +21,7 @@ function BookingApp() {
     createBooking,
     deleteBooking,
   } = useBooking();
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     if (roomsFetchedRef.current) return;
@@ -82,6 +84,7 @@ function BookingApp() {
           />
 
           <BookingForm
+            authenticated={isAuthenticated}
             selectedRoomId={selectedRoomId}
             submitting={submitting}
             onCreateBooking={handleCreateBooking}
