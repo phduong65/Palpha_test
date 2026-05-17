@@ -174,7 +174,6 @@ export function AuthProvider({ children }) {
       registerUser,
     ],
   );
-
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

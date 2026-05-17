@@ -7,15 +7,20 @@ const api = axios.create({
   },
 });
 
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("booking_auth_token");
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("booking_auth_token");
 
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
 
-  return config;
-});
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  },
+);
 
 api.interceptors.response.use(
   (response) => response,
@@ -23,6 +28,8 @@ api.interceptors.response.use(
     if (error?.response?.status === 401) {
       localStorage.removeItem("booking_auth_token");
       localStorage.removeItem("booking_auth_user");
+
+      window.location.href = "/login";
     }
 
     return Promise.reject(error);

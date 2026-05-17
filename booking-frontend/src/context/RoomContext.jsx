@@ -4,7 +4,7 @@ const RoomContext = createContext(null);
 
 export function RoomProvider({ children }) {
   const [selectedRoomId, setSelectedRoomId] = useState(null);
-  
+
   const value = useMemo(
     () => ({ selectedRoomId, setSelectedRoomId }),
     [selectedRoomId],
