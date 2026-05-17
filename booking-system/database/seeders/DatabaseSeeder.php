@@ -11,12 +11,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $rooms = [
-            ['name' => 'Phong Standard 101', 'capacity' => 2],
-            ['name' => 'Phong Standard 102', 'capacity' => 2],
-            ['name' => 'Phong Superior 201', 'capacity' => 2],
-            ['name' => 'Phong Deluxe 301', 'capacity' => 3],
-            ['name' => 'Phong Suite 401', 'capacity' => 4],
-            ['name' => 'Phong Family 501', 'capacity' => 5],
+            ['name' => 'Phòng Standard 101', 'capacity' => 2],
+            ['name' => 'Phòng Standard 102', 'capacity' => 2],
+            ['name' => 'Phòng Superior 201', 'capacity' => 2],
+            ['name' => 'Phòng Deluxe 301', 'capacity' => 3],
+            ['name' => 'Phòng Suite 401', 'capacity' => 4],
+            ['name' => 'Phòng Family 501', 'capacity' => 5],
+            ['name' => 'Phòng Family 502', 'capacity' => 5],
         ];
 
         foreach ($rooms as $room) {
